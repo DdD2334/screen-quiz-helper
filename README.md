@@ -57,21 +57,21 @@ python main.py        # 或双击 start.bat
 
 热键可在 设置 → 热键 页录制修改。托盘：单击显示/隐藏，双击打开设置，右键菜单退出。
 
-## 内置预设（8 家）
+## 内置预设（8 家，均按官方文档核对）
 
 | 预设 | api_base | 默认模型 | 最小间隔 | JSON 模式 |
 |---|---|---|---|---|
-| Agentic（Agnes） | api.agentic.example.com/v1 | agnes-3.0-flash | 45s | 否 |
+| Agnes AI | api.agnes-ai.cn/v1（海外 apihub.agnes-ai.com/v1） | agnes-3.0-flash | 45s | 否 |
 | OpenAI | api.openai.com/v1 | gpt-4o | 3s | 是 |
-| Azure OpenAI | YOUR_RESOURCE.openai.azure.com/openai | gpt-4o | 5s | 否 |
+| Azure OpenAI | YOUR_RESOURCE.openai.azure.com/openai/deployments/YOUR_DEPLOYMENT | gpt-4o（填部署名） | 5s | 否 |
 | 通义千问 VL | dashscope.aliyuncs.com/compatible-mode/v1 | qwen-vl-max | 10s | 是 |
-| Gemini | generativelanguage.googleapis.com/v1beta/openai | gemini-1.5-flash | 10s | 是 |
-| Moonshot（Kimi） | api.moonshot.cn/v1 | moonshot-v1-8k | 10s | 否 |
+| Gemini | generativelanguage.googleapis.com/v1beta/openai | gemini-3.8-flash | 10s | 是 |
+| Moonshot（Kimi） | api.moonshot.cn/v1（海外 api.moonshot.ai/v1） | kimi-k3 | 10s | 否 |
 | Ollama（本地） | localhost:11434/v1 | llava | 1s | 否 |
 | OpenRouter | openrouter.ai/api/v1 | openai/gpt-4o | 5s | 是 |
 
 选预设自动带出 api_base / 模型名 / 最小间隔；任何其它 OpenAI 兼容服务选"自定义"填三个字段即可。
-Azure 的 `api_version` 在预设 extra 里，自动拼为 URL query。
+Azure 需把 `YOUR_RESOURCE` / `YOUR_DEPLOYMENT` 换成实际资源名与部署名，`api_version`（默认 2024-10-21）在预设 extra 里自动拼为 URL query。
 
 **限流说明**：`最小调用间隔` 从上次请求完成时刻起算，等待期间状态条倒计时；429 时按 Retry-After（无则 1/2/4s）退避重试最多 3 次。免费额度服务商请把间隔调大。
 
