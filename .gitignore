@@ -1,0 +1,11 @@
+__pycache__/
+logs/
+screenshots/
+build/
+dist/
+.pytest_cache/
+cache.json
+favorites.json
+exports/
+config.json
+config.json.tmp

@@ -1,0 +1,11 @@
+# screen-quiz-helper v2 运行依赖
+# 安装：pip install -r requirements.txt
+# 截屏
+mss>=9.0.0
+keyboard>=0.13.5
+# UI
+PySide6>=6.6.0
+# 模型请求
+httpx>=0.28.0
+# 图片压缩缩放
+Pillow>=10.0.0
