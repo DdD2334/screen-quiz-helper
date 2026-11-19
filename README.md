@@ -1,8 +1,19 @@
 # screen-quiz-helper v2 — 屏幕答题助手（学习练习辅助）
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3.13-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)
+[![GitHub stars](https://img.shields.io/github/stars/DdD2334/screen-quiz-helper?style=social)](https://github.com/DdD2334/screen-quiz-helper)
+
 Windows 常驻小工具：按全局热键截屏 → 发给任意 OpenAI 兼容协议的视觉大模型 → 识别画面中的题目并给出**答案 / 置信度 / 理由 / 题型** → 置顶悬浮窗逐题展示、可复制。
 
+![悬浮窗效果](docs/panel.png)
+
 > 定位：**学习与练习辅助**。答案需人工核对后使用，本工具不自动填答、不做周期性截屏（仅热键触发）、不做对任何软件隐藏窗口。
+
+## 直接下载 exe
+
+不想装 Python：去 [Releases](https://github.com/DdD2334/screen-quiz-helper/releases) 下载 `screen-quiz-helper.exe`，放到桌面等普通文件夹双击即可；首次启动自动生成 `config.json` 并弹设置向导（填 key 就能用）。
 
 ## 功能清单（v2 实况）
 
