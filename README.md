@@ -119,6 +119,8 @@ python -m pytest tests -q     # 全部离线，不依赖网络/真实 key/显示
 python probe_agentic.py       # 离线自检
 ```
 
+手工验收用的样题图与对照答案见 [`testdata/`](testdata/README.md)：`quiz_page.png` 整页 5 题、`quiz_single.png` 单题，附预期答案表和 7 步验收清单。
+
 ## 可选 server 通道
 
 主程序不依赖 server.py。需要 HTTP 接口时：
