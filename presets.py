@@ -8,8 +8,8 @@ from __future__ import annotations
 
 PRESETS: dict[str, dict] = {
     "agentic": {
-        "label": "Agentic（Agnes）",
-        "api_base": "https://api.agentic.example.com/v1",
+        "label": "Agnes AI",
+        "api_base": "https://api.agnes-ai.cn/v1",  # 官方文档：国内服务；海外为 https://apihub.agnes-ai.com/v1
         "model": "agnes-3.0-flash",
         "min_interval_seconds": 45,
         "extra": {},
@@ -25,10 +25,12 @@ PRESETS: dict[str, dict] = {
     },
     "azure": {
         "label": "Azure OpenAI",
-        "api_base": "https://YOUR_RESOURCE.openai.azure.com/openai",
+        # 官方路径：https://{resource}.openai.azure.com/openai/deployments/{deployment}/chat/completions?api-version=...
+        # 把 YOUR_RESOURCE / YOUR_DEPLOYMENT 换成你的资源名与部署名，模型名填部署名
+        "api_base": "https://YOUR_RESOURCE.openai.azure.com/openai/deployments/YOUR_DEPLOYMENT",
         "model": "gpt-4o",
         "min_interval_seconds": 5,
-        "extra": {"api_version": "2024-08-01"},
+        "extra": {"api_version": "2024-10-21"},
         "supports_json_mode": False,
     },
     "qwen-vl": {
@@ -42,15 +44,15 @@ PRESETS: dict[str, dict] = {
     "gemini": {
         "label": "Gemini（OpenAI 兼容）",
         "api_base": "https://generativelanguage.googleapis.com/v1beta/openai",
-        "model": "gemini-1.5-flash",
+        "model": "gemini-3.8-flash",  # 官方当前主力 Flash（1.5 系列已停用）
         "min_interval_seconds": 10,
         "extra": {},
         "supports_json_mode": True,
     },
     "moonshot": {
         "label": "Moonshot（Kimi）",
-        "api_base": "https://api.moonshot.cn/v1",
-        "model": "moonshot-v1-8k",
+        "api_base": "https://api.moonshot.cn/v1",  # 海外为 https://api.moonshot.ai/v1
+        "model": "kimi-k3",  # 官方主力，原生支持图片输入
         "min_interval_seconds": 10,
         "extra": {},
         "supports_json_mode": False,
